@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 import { Data } from "../data/Data";
 
@@ -21,8 +21,11 @@ export const bookSlice = createSlice({
         return true;
       });
     },
+    addWish: (state, action) => {
+      state.value = action.payload;
+    },
   },
 });
 
-export const { addBook, deleteBook, updateBook } = bookSlice.actions;
+export const { addBook, deleteBook, updateBook, addWish } = bookSlice.actions;
 export default bookSlice.reducer;

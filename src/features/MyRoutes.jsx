@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Author from "../page/Author";
 import Home from "../page/Home";
+import Wishlist from "../page/Wishlist";
 
 const MyRoutes = () => {
   return (
@@ -9,6 +10,7 @@ const MyRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/authors" element={<Author />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
     </div>
   );

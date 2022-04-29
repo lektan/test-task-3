@@ -1,12 +1,20 @@
 import React from "react";
-import BookList from "../components/BookList";
+import { useSelector } from "react-redux";
+
 import Title from "../components/Title";
+import BookItem from "../components/BookItem";
 
 const Home = () => {
+  const bookList = useSelector((state) => state.books.value);
+
   return (
     <div>
       <Title title="Books" />
-      <BookList />
+      <div className="grid grid-cols-5 gap-5">
+        {bookList.map((book) => (
+          <BookItem key={book.id} book={book} />
+        ))}
+      </div>
     </div>
   );
 };
