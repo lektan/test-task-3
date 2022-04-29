@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const menu = ["authors", "categories", "wishlist"];
+const menu = ["authors", "category", "wishlist", "add"];
 
 const Sidebar = () => {
   return (

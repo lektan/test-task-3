@@ -2,7 +2,7 @@ export const Data = [
   {
     id: 0,
     title: "LOGO Modernism",
-    author: ["Jens Muller", "R. Roger Remington"],
+    author: "Jens Muller",
     category: "Arts",
     year: 2015,
     publisher: "Taschen",
@@ -12,7 +12,7 @@ export const Data = [
   {
     id: 1,
     title: "Successful Drawing",
-    author: ["Andrew Loomis"],
+    author: "Andrew Loomis",
     category: "Arts",
     year: 2012,
     publisher: "Titan Books",
@@ -22,7 +22,7 @@ export const Data = [
   {
     id: 2,
     title: "What is music?: solving a scientific mystery",
-    author: ["Philip Dorrell"],
+    author: "Philip Dorrell",
     category: "Music",
     year: 2005,
     publisher: "Lulu",
@@ -32,7 +32,7 @@ export const Data = [
   {
     id: 3,
     title: "Music Composition For Dummies",
-    author: ["Scott Jarrett", "Holly Day"],
+    author: "Scott Jarrett",
     category: "Music",
     year: 2008,
     publisher: "Taschen",
@@ -42,7 +42,7 @@ export const Data = [
   {
     id: 4,
     title: "LOGO Modernism",
-    author: ["Jens Muller", "R. Roger Remington"],
+    author: "Jens Muller",
     category: "Arts",
     year: 2015,
     publisher: "John Wiley & Sons",
@@ -52,7 +52,7 @@ export const Data = [
   {
     id: 5,
     title: "Cosmos",
-    author: ["Carl Sagan"],
+    author: "Carl Sagan",
     category: "Astronomy",
     year: 2017,
     publisher: "Companhia das Letras",
