@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 import { Data } from "../data/Data";
 import { RootState } from "..";
@@ -33,6 +33,7 @@ export const bookSlice = createSlice({
   },
 });
 
-export const selectBooks = (RootState) => RootState.books.value;
+export const selectBooks = (state) => state.books.value;
+console.log(selectBooks);
 export const { addBook, deleteBook, updateBook, addWish } = bookSlice.actions;
 export default bookSlice.reducer;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const menu = ["authors", "category", "wishlist", "add"];
 
-const Sidebar = ({ isMenuOpen }) => {
+const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <div
       className={`fixed z-50 bg-white w-72 duration-300 lg:w-[16rem] shadow-md h-screen pt-10 ${
@@ -12,6 +12,7 @@ const Sidebar = ({ isMenuOpen }) => {
     >
       <h1 className="text-3xl font-semibold text-center mb-10">Menu</h1>
       <Link
+        onClick={() => setIsMenuOpen(false)}
         to="/"
         className="capitalize block px-4 py-2 transition duration-200 hover:bg-gray-100"
       >
@@ -19,6 +20,7 @@ const Sidebar = ({ isMenuOpen }) => {
       </Link>
       {menu.map((el, id) => (
         <Link
+          onClick={() => setIsMenuOpen(false)}
           key={id}
           to={`/${el}`}
           className="capitalize block px-4 py-2 transition duration-200 hover:bg-gray-100"

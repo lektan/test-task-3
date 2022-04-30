@@ -18,13 +18,14 @@ const store = configureStore({
   },
 });
 
-export const RootState = store.getState;
-
 store.subscribe(
   debounce(() => {
     saveState(store.getState());
   }, 800)
 );
+
+export const RootState = store.getState;
+console.log(RootState);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
