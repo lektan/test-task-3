@@ -7,12 +7,24 @@ import { BrowserRouter } from "react-router-dom";
 import bookReducer from "./store/BookSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
+import { loadState } from "./store/browser-storage";
+import { saveState } from "./store/browser-storage";
+import { debounce } from "debounce";
 
 const store = configureStore({
   reducer: {
     books: bookReducer,
+    preloadedState: loadState(),
   },
 });
+
+export const RootState = store.getState;
+
+store.subscribe(
+  debounce(() => {
+    saveState(store.getState());
+  }, 800)
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

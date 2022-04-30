@@ -1,6 +1,7 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 
 import { Data } from "../data/Data";
+import { RootState } from "..";
 
 export const bookSlice = createSlice({
   name: "books",
@@ -32,5 +33,6 @@ export const bookSlice = createSlice({
   },
 });
 
+export const selectBooks = (RootState) => RootState.books.value;
 export const { addBook, deleteBook, updateBook, addWish } = bookSlice.actions;
 export default bookSlice.reducer;
