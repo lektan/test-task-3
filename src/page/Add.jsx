@@ -2,28 +2,15 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addBook } from "../store/BookSlice";
 
+import { useNavigate } from "react-router-dom";
+
 import { useForm } from "react-hook-form";
 import Title from "../components/Title";
 
 const Add = () => {
   const dispatch = useDispatch();
   const bookList = useSelector((state) => state.books.value);
-
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [category, setCategory] = useState("");
-  const [year, setYear] = useState("");
-  const [publisher, setPublisher] = useState("");
-  const [img, setImg] = useState("");
-
-  const SubmitHandle = () => {
-    setTitle("");
-    setAuthor("");
-    setCategory("");
-    setYear("");
-    setPublisher("");
-    setImg("");
-  };
+  let navigate = useNavigate();
 
   const {
     register,
@@ -39,6 +26,7 @@ const Add = () => {
         ...data,
       })
     );
+    navigate("/");
   };
 
   console.log(watch("example")); //
@@ -55,7 +43,7 @@ const Add = () => {
             {...register("title", { required: true })}
             placeholder="Title"
           />
-          {errors.Title && <span>This field is required</span>}
+          {errors.title && <span>This field is required</span>}
         </div>
         <div>
           <input
@@ -63,7 +51,7 @@ const Add = () => {
             {...register("author", { required: true })}
             placeholder="Author"
           />
-          {errors.Author && <span>This field is required</span>}
+          {errors.author && <span>This field is required</span>}
         </div>
         <div>
           <input
@@ -71,7 +59,7 @@ const Add = () => {
             {...register("category", { required: true })}
             placeholder="Category"
           />
-          {errors.Category && <span>This field is required</span>}
+          {errors.category && <span>This field is required</span>}
         </div>
         <div>
           <input
@@ -79,7 +67,7 @@ const Add = () => {
             {...register("year", { required: true })}
             placeholder="Year"
           />
-          {errors.Year && <span>This field is required</span>}
+          {errors.year && <span>This field is required</span>}
         </div>
         <div>
           <input
@@ -87,7 +75,7 @@ const Add = () => {
             {...register("publisher", { required: true })}
             placeholder="Publisher"
           />
-          {errors.Publisher && <span>This field is required</span>}
+          {errors.publisher && <span>This field is required</span>}
         </div>
         <div>
           <input
@@ -95,9 +83,12 @@ const Add = () => {
             {...register("img", { required: true })}
             placeholder="Image url"
           />
-          {errors.Img && <span>This field is required</span>}
+          {errors.img && <span>This field is required</span>}
         </div>
-        <input type="submit" />
+        <input
+          className="bg-black text-white py-3 cursor-pointer"
+          type="submit"
+        />
       </form>
     </div>
   );

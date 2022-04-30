@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addWish } from "../store/BookSlice";
+import { addWish, deleteBook } from "../store/BookSlice";
 
 import { ReactComponent as Star } from "../icons/Star.svg";
 import { ReactComponent as StarFill } from "../icons/Star_fill.svg";
+import { Link } from "react-router-dom";
 
 const BookItem = ({ book }) => {
   const dispatch = useDispatch();
@@ -35,6 +36,22 @@ const BookItem = ({ book }) => {
         >
           {book.wish ? <StarFill /> : <Star />}
         </button>
+        <div className="absolute -bottom-20 group-hover:bottom-0 flex duration-300 left-1/2 transform -translate-x-1/2">
+          <Link
+            className="px-4 py-2 border hover:bg-black hover:text-white hover:border-black duration-300 bg-white "
+            to={`/${book.id}`}
+          >
+            Edit
+          </Link>
+          <button
+            onClick={() => {
+              dispatch(deleteBook({ id: book.id }));
+            }}
+            className="px-4 py-2 border hover:bg-black hover:text-white hover:border-black duration-300 bg-white"
+          >
+            Delete
+          </button>
+        </div>
 
         <img className="w-full h-[20vw]" src={book.img} alt="" />
       </div>

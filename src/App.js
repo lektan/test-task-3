@@ -5,10 +5,11 @@ import MyRoutes from "./features/MyRoutes";
 
 function App() {
   return (
-    <>
+    <div className="relative">
       <Sidebar />
+      <button></button>
       <MyRoutes />
-    </>
+    </div>
   );
 }
 
