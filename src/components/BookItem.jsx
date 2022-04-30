@@ -32,11 +32,11 @@ const BookItem = ({ book }) => {
         </span>
         <button
           onClick={wishlistAddHandler}
-          className="absolute top-0 -left-20 bg-white w-10 h-10 flex items-center justify-center duration-300 group-hover:left-0"
+          className="absolute top-0 left-0 md:-left-20 bg-white w-10 h-10 flex items-center justify-center duration-300 group-hover:left-0"
         >
           {book.wish ? <StarFill /> : <Star />}
         </button>
-        <div className="absolute -bottom-20 group-hover:bottom-0 flex duration-300 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-0 md:-bottom-20 group-hover:bottom-0 flex duration-300 left-1/2 transform -translate-x-1/2">
           <Link
             className="px-4 py-2 border hover:bg-black hover:text-white hover:border-black duration-300 bg-white "
             to={`/${book.id}`}
@@ -53,7 +53,11 @@ const BookItem = ({ book }) => {
           </button>
         </div>
 
-        <img className="w-full h-[20vw]" src={book.img} alt="" />
+        <img
+          className="w-full h-[60vw] sm:h-[40vw] lg:h-[20vw]"
+          src={book.img}
+          alt=""
+        />
       </div>
       <div className="mt-2 px-1">
         <h1 className="font-semibold">{book.title}</h1>
